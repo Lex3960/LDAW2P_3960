@@ -1,0 +1,15 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Class Project</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li>
+        {{#link-to 'auth.products'}}Products{{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'auth.meals.index'}}Meals{{/link-to}}
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{{outlet}}

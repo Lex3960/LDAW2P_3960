@@ -1,0 +1,18 @@
+<div class="row">
+    <h5>CRUD Products</h5>
+  <a {{action 'createProduct'}} class="waves-effect waves-light btn">Create Product</a>
+</div>
+<div class="row">
+        {{log model}}
+        {{#each model as |product|}}
+          <div class="col s3">
+          {{product-card
+            product=product
+            deleteProduct=(action 'deleteProduct' product)
+            updateProduct=(action 'updateProduct' product)
+          }}
+            </div>
+        {{else}}
+          <h5>No products registered...</h5>
+        {{/each}}
+</div>

@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-image">
+          <img src="https://www.doctors.am/media/contents/400x270/c3de8fb9e2e3e69a2e0b9e0f0695ab41.jpg">
+          <span class="card-title">
+            {{input type='text' class="white-text" value=product.name}}
+          </span>
+  </div>
+  <div class="card-content white-text">
+    <p>
+      Calories: {{input type='number' value=product.calories}}<br>
+    </p>
+  </div>
+  <div class="card-action">
+    <a {{action 'deleteProduct'}}>Delete</a>
+    <a {{action 'updateProduct'}}>Update</a>
+  </div>
+</div>

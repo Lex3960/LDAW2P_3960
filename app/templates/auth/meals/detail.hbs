@@ -5,8 +5,24 @@
         <label for="icon_prefix">Meal</label>
     </div>
 </div>
-{{log model}}
-
+<div class="row">
+	<div class="col s2 offset-s1">
+		{{#link-to 'auth.meals' class="waves-effect waves-light btn left red"}}
+			 <i class="material-icons right">close</i>
+		  Cancel
+		{{/link-to}}
+	</div>
+	<div class="col s4 offset-s4">
+		<button {{action 'createFood' model.meal}} class="waves-effect waves-light btn left blue darken-2">
+		  <i class="material-icons right">add</i>
+		  Create Food
+		</button>
+		<button {{action 'editMeal' model.meal model.foods}} class="waves-effect waves-light btn right  blue darken-2">
+		  <i class="material-icons right">save</i>
+		  Update Meal
+		</button>
+	</div>
+</div>
 <div class="row">
   <div class="col s10 offset-s1">
     <div class="row">
@@ -14,8 +30,9 @@
           <div class="col s3">
           {{food-card
             food=food
-            deleteFood=(action 'deleteFood' product)
-            updateFood=(action 'updateFood' product)
+						products=model.products
+            deleteFood=(action 'deleteFood' food)
+            updateFood=(action 'updateFood' food model.meal)
           }}
             </div>
         {{else}}
@@ -23,18 +40,4 @@
         {{/each}}
     </div>
   </div>
-</div>
-
-
-<div class="row">
-	<div class="col s10 offset-s1">
-		<button {{action 'createFood' model.meal}} class="waves-effect waves-light btn left">
-		  <i class="material-icons right">save</i>
-		  Create
-		</button>
-		<button {{action 'editMeal' model.meal model.foods}} class="waves-effect waves-light btn right">
-		  <i class="material-icons right">save</i>
-		  Update
-		</button>
-	</div>
 </div>

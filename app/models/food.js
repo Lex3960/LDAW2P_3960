@@ -1,5 +1,6 @@
 import DS from 'ember-data';
 import { computed } from '@ember/object';
+import { isBlank } from '@ember/utils';
 
 export default DS.Model.extend({
   name: DS.attr('string'),
@@ -7,7 +8,7 @@ export default DS.Model.extend({
   meal: DS.belongsTo('meal'),
   product: DS.belongsTo('product'),
 
-  calories: computed('servings', 'product.calories', function(){
-  	return this.servings * this.product.get('calories');
+  calories: computed('servings', 'product', function(){
+  	return (!isBlank(this.get('product'))) ? this.get('servings') * this.get('product.calories'): null;
   })
 });

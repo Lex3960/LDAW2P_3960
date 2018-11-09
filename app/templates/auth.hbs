@@ -3,13 +3,24 @@
     <a href="#" class="brand-logo">Class Project</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li>
-        {{#link-to 'auth.products'}}Products{{/link-to}}
+        {{#link-to 'auth.products'}}
+          <i class="material-icons">view_list</i>
+        {{/link-to}}
       </li>
       <li>
-        {{#link-to 'auth.meals.index'}}Meals{{/link-to}}
+        {{#link-to 'auth.meals.index'}}
+          <i class="material-icons">restaurant_menu</i>
+        {{/link-to}}
       </li>
       <li>
-        {{#link-to 'login'}}Sign Out{{/link-to}}
+        {{#link-to 'auth.eaten'}}
+          <i class="material-icons">show_chart</i>
+        {{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'login'}}
+          <i class="material-icons">exit_to_app</i>
+        {{/link-to}}
       </li>
     </ul>
   </div>

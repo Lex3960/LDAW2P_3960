@@ -2,5 +2,5 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   name: DS.attr('string'),
-  calories: DS.attr('number')
+  calories: DS.attr('number'),
 });

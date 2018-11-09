@@ -5,7 +5,7 @@ export default Component.extend({
     deleteFood() {
       this.deleteFood();
     },
-
+		
     updateFood(){
       this.updateFood();
     }

@@ -13,6 +13,7 @@ Router.map(function() {
     this.route('meals', function() {
       this.route('detail', {path: '/:id'});
     });
+    this.route('eaten');
   });
 });
 

@@ -1,5 +1,5 @@
 import Service from '@ember/service';
-import { computed } from '@embr/object';
+import { computed } from '@ember/object';
 
 export default Service.extend({
   limit: null,

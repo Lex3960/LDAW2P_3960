@@ -1,0 +1,9 @@
+<div class="card {{if inShape 'green' 'red'}}">
+  <div class="card-image">
+    <img src="{{if inShape '/media/slim.jpg' '/media/fatty.jpg'}}">
+    <span class="card-title black-text">{{if inShape 'H' 'Unh'}}ealhty</span>
+  </div>
+  <div class="card-content white-text">
+    <p>Remaining Calories: {{remaining}}</p>
+  </div>
+</div>

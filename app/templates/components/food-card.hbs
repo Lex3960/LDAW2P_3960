@@ -1,13 +1,22 @@
 <div class="card">
   <div class="card-image">
-          <img src="https://raw.githubusercontent.com/ggomaeng/react-native-svg-chicken/master/inspiration.gif">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/dfa30216606029.562aeb012415d.gif">
           <span class="card-title">
-            {{input type='text' class="white-text" value=food.name}}
+            {{input type='text' class="white-text" value=food.name placeholder='Food'}}
           </span>
   </div>
-  <div class="card-content white-text">
+  <div class="card-content blue-text text-darken-2">
     <p>
-      Calories: {{input type='number' value=food.servings}}<br>
+      Servings: {{input type='number' value=food.servings}}<br>
+      {{#power-select
+        options=products
+        selected=food.product
+        onchange=(action (mut food.product))
+        as |product|}}
+        {{product.name}}
+      {{/power-select}}
+      <br>
+      Calories: {{food.calories}}
     </p>
   </div>
   <div class="card-action">

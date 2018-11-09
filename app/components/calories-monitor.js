@@ -11,6 +11,6 @@ export default Component.extend({
   }),
 
   remaining: computed(function(){
-		return this.get('calculator.inShape');
+		return this.get('calculator.remaining');
 	})
 });

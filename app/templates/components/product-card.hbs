@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card blue darken-2">
   <div class="card-image">
           <img src="https://raw.githubusercontent.com/ggomaeng/react-native-svg-chicken/master/inspiration.gif">
           <span class="card-title">
@@ -7,11 +7,11 @@
   </div>
   <div class="card-content white-text">
     <p>
-      Calories: {{input type='number' value=product.calories}}<br>
+      Calories: {{input class='white-text' type='number' value=product.calories}}<br>
     </p>
   </div>
   <div class="card-action">
-    <a {{action 'deleteProduct'}}>Delete</a>
     <a {{action 'updateProduct'}}>Update</a>
+    <button class="waves-effect waves-light red btn" {{action 'deleteProduct'}}>Delete</button>
   </div>
 </div>

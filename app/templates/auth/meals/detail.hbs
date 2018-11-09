@@ -1,6 +1,40 @@
-<h3>Update Meal</h3>
-{{input type="text" value=model.name}}
-<button {{action 'editMeal' model}} class="waves-effect waves-light btn">
-  <i class="material-icons right">save</i>
-  Update
-</button>
+<div class="row">
+	<div class="input-field col s10 offset-s1">
+        <i class="material-icons prefix">account_circle</i>
+       {{input type="text" value=model.meal.name}}
+        <label for="icon_prefix">Meal</label>
+    </div>
+</div>
+{{log model}}
+
+<div class="row">
+  <div class="col s10 offset-s1">
+    <div class="row">
+      {{#each model.foods as |food|}}
+          <div class="col s3">
+          {{food-card
+            food=food
+            deleteFood=(action 'deleteFood' product)
+            updateFood=(action 'updateFood' product)
+          }}
+            </div>
+        {{else}}
+          <h5>No foods yet...</h5>
+        {{/each}}
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+	<div class="col s10 offset-s1">
+		<button {{action 'createFood' model.meal}} class="waves-effect waves-light btn left">
+		  <i class="material-icons right">save</i>
+		  Create
+		</button>
+		<button {{action 'editMeal' model.meal model.foods}} class="waves-effect waves-light btn right">
+		  <i class="material-icons right">save</i>
+		  Update
+		</button>
+	</div>
+</div>

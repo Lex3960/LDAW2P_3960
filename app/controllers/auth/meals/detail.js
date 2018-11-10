@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 import {inject as service} from '@ember/service';
+import { all } from 'rsvp';
 
 export default Controller.extend({
   calculator: service(),
@@ -8,17 +9,17 @@ export default Controller.extend({
   	createFood(meal) {
       meal.get('foods').createRecord({
   			meal: meal
-  		}).save().then(()=>{
-        this.transitionToRoute({queryParams: {id: meal.get('id')}})
-      })
+  		}).save()
     },
 
     editMeal(meal, foods) {
-        foods.save().then(()=>{
-          meal.save().then(() => {
-            this.transitionToRoute('auth.meals.index')
-          })
+      return all(foods.invoke('save')).then(()=>{
+        meal.save().then(() => {
+          let calories = meal.get('totalCalories');
+          this.get('calculator').add(calories);
+          this.transitionToRoute('auth.meals.index')
         })
+      })
     },
 
     deleteFood(food) {

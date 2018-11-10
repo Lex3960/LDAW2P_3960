@@ -1,9 +1,14 @@
 <div class="card {{if inShape 'green' 'red'}}">
   <div class="card-image">
-    <img src="{{if inShape '/media/slim.jpg' '/media/fatty.jpg'}}">
-    <span class="card-title black-text">{{if inShape 'H' 'Unh'}}ealhty</span>
+    <img src="
+      {{if inShape
+        'https://66.media.tumblr.com/3554fa781e0ae6b08a7f3a93a1cfc635/tumblr_mzos1wgq2p1qhry52o1_r1_500.gif'
+        'https://thumbs.gfycat.com/WebbedUnfitArcticduck-small.gif'
+      }}
+    ">
+    <span class="card-title white-text">{{if inShape 'H' 'Unh'}}ealhty</span>
   </div>
   <div class="card-content white-text">
-    <p>Remaining Calories: {{remaining}}</p>
+    <h6>Remaining Calories: {{remaining}}</h6>
   </div>
 </div>

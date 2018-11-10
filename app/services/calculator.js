@@ -21,12 +21,12 @@ export default Service.extend({
 
   add(calories) {
     let count = this.get('count');
-    this.set(count, count += calories);
+    this.set('count', count += calories);
   },
 
   remove(calories) {
     let count = this.get('count');
-    this.set(count, count -= calories);
+    this.set('count', count -= calories);
   }
 
 });

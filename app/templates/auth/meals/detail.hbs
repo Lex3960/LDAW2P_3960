@@ -1,22 +1,29 @@
 <div class="row">
+	<div class="input-field col s5 offset-s1">
+    <blockquote><h4>Meal Detail</h4></blockquote>
+  </div>
+</div>
+<div class="row">
 	<div class="input-field col s10 offset-s1">
         <i class="material-icons prefix">account_circle</i>
        {{input type="text" value=model.meal.name}}
         <label for="icon_prefix">Meal</label>
-    </div>
+  </div>
 </div>
 <div class="row">
-	<div class="col s2 offset-s1">
+	<div class="col s3 offset-s1">
 		{{#link-to 'auth.meals' class="waves-effect waves-light btn left red"}}
 			 <i class="material-icons right">close</i>
 		  Cancel
 		{{/link-to}}
 	</div>
-	<div class="col s4 offset-s4">
-		<button {{action 'createFood' model.meal}} class="waves-effect waves-light btn left blue darken-2">
+	<div class="col s2 offset-s3">
+		<button {{action 'createFood' model.meal}} class="waves-effect waves-light btn right blue darken-2">
 		  <i class="material-icons right">add</i>
 		  Create Food
 		</button>
+	</div>
+	<div class="col s2">
 		<button {{action 'editMeal' model.meal model.foods}} class="waves-effect waves-light btn right  blue darken-2">
 		  <i class="material-icons right">save</i>
 		  Update Meal

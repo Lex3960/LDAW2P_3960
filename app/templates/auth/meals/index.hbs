@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col s10 offset-s1">
-    <h3>Meals</h3>
+  <blockquote><h3>Meals</h3></blockquote>
     <form {{action 'createMeal' on="submit"}}>
           Set the name:
           <div class="input-field">
@@ -16,14 +16,14 @@
     <div class="row">
       {{#each model as |meal|}}
         {{#simple-card item=meal as |mealName edit delete|}}
-          <div class="col s4">
-            <div class="card blue darken-3">
+          <div class="col s3">
+            <div class="card orange darken-3">
               <div class="card-image">
               <img src="https://31.media.tumblr.com/tumblr_lk7si31zPt1qdub50.gif">
               <span class="card-title">{{mealName}}</span>
             </div>
               <div class="card-action">
-              {{#link-to 'auth.meals.detail' meal.id}}
+              {{#link-to 'auth.meals.detail' meal.id class="white-text"}}
                 {{edit}}
               {{/link-to}}
               <button class="waves-effect waves-light red btn" {{action 'deleteMeal' meal}}>

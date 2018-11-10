@@ -11,7 +11,7 @@ export default DS.Model.extend({
   }),
 
   foodCalories: computed('foods.@each.calories', function(){
-  	return this.foods.mapBy('calories');
+  	return this.get('foods').mapBy('calories');
   }),
 
   totalCalories: computed.sum('foodCalories')

@@ -9,7 +9,9 @@ export default Controller.extend({
   	createFood(meal) {
       meal.get('foods').createRecord({
   			meal: meal
-  		}).save()
+  		}).save().then(()=>{
+          window.location.reload(true);
+      })
     },
 
     editMeal(meal, foods) {
